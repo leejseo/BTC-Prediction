@@ -48,10 +48,10 @@ y_test.reshape(y_test.shape[0])
 # Simple LSTM model
 
 model = Sequential()
-model.add(LSTM(units=4, input_shape=X_train[0].shape))
+model.add(LSTM(units=3, input_shape=X_train[0].shape))
 model.add(Dense(1))
 model.compile(optimizer='adam', loss='mean_squared_error')
-model.fit(X_train, y_train, epochs=50, batch_size=1)
+model.fit(X_train, y_train, epochs=40, batch_size=1)
 
 y_predict = model.predict(X_test)
 y_predict = scaler.inverse_transform(y_predict)
